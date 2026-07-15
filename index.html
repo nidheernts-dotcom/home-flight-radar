@@ -46,9 +46,13 @@ let url =
 `https://opensky-network.org/api/states/all?lamin=${latitude-0.1}&lomin=${longitude-0.1}&lamax=${latitude+0.1}&lomax=${longitude+0.1}`;
 
 
-let response = await fetch(url);
+let response = await fetch(url, {
+  mode: "cors"
+});
 
 let data = await response.json();
+
+console.log(data);
 
 
 let box=document.getElementById("flights");
